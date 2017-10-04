@@ -1,6 +1,55 @@
 # Упражнение 1 - ООП Преговор
 
 ## Задача 1
+Да се реализира клас String, който представлява символен низ с произволна дължина. За този клас да се реализира следната функционлност:
+* Голямата четворка
+```C++
+String empty;
+String car("Skoda Octavia vRS");
+String secondCar(car);
+String thirdCar = car;
+empty = thirdCar;
+```
+* Оператор за изход <<
+```C++
+String newSchoolYear("Welcome back");
+std::cout << newSchoolYear;
+```
+* Оператори за конкатениране + и +=
+```C++
+String manufacture("VW");
+String model("Passat");
+String newModel("Arteon");
+manufacture += " ";
+manufacture += model;
+String Arteon = (manufacture + " ") + newModel;
+std::cout << manufacture << std::endl; // VW Passat
+std::cout << Arteon << std::endl; // VW Arteon
+```
+* Оператор [ ]
+```C++
+String Mercedes("C63 AMG");
+const String BMW("BMW M3 CSL");
+Mercedes[2] = '5';
+BMW[5] = '5'; // Error
+std::cout << Mercedes << std::endl; // C65 AMG
+std::cout << BMW << std::endl; // BMW M3 CSL
+```
+* Функция, която проверява дали низа е празен
+```C++
+String noData;
+String Jane("The Diary of Jane");
+if(noData.empty() == true)
+{
+    std::cout << "noData is empty\n";
+}
+noData = "Breaking Benjamin - ";
+noData += Jane;
+if(noData.empty() == false)
+{
+    std::cout << "noData is not empty\n";
+}
+```
 
 ## Задача 2
 ## Задача 3
