@@ -34,6 +34,8 @@ void printLines(const char* filename, int lines)
 
         ++i;
     }
+    
+    is.close();
 }
 
 bool isLinesCountOptionMarker(const char* str)
