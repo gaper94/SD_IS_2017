@@ -1,0 +1,46 @@
+#include <assert.h>
+//////////////////////////////////////////////////////////////////////////
+template<class T>
+iterator<T>& iterator<T>::operator++()
+{
+    assert(_node != nullptr);
+    _node = _node->next;
+    return *this;
+}
+
+//////////////////////////////////////////////////////////////////////////
+template<class T>
+iterator<T> iterator<T>::operator++(int)
+{
+    iterator<T> res(_node);
+    ++(*this);
+    return res;
+}
+
+//////////////////////////////////////////////////////////////////////////
+template<class T>
+bool iterator<T>::operator==(const iterator<T>& rhs)
+{
+    return _node == rhs._node;
+}
+
+//////////////////////////////////////////////////////////////////////////
+template<class T>
+bool iterator<T>::operator!=(const iterator<T>& rhs)
+{
+    return !(*this == rhs);
+}
+
+//////////////////////////////////////////////////////////////////////////
+template<class T>
+T& iterator<T>::operator*()
+{
+    return _node->data;
+}
+
+//////////////////////////////////////////////////////////////////////////
+template<class T>
+const T& iterator<T>::operator*() const
+{
+    return _node->data;
+}
