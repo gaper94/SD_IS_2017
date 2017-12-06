@@ -19,6 +19,13 @@
 template<typename T>
 void selection_sort(iter<T> begin, iter<T> end, bool (*predicate)(const T&, const T&) = nullptr); // If predicate is nullptr
                                                                                                   // try to use operator '<'
+                                                                                                  
+void print(iter<T> begin, iter<T> end);
+
+bool descending(const int& a, const int& b)
+{
+    return a > b;
+}
 
 Vector<int> numbers;
 numbers.push_back(20);
@@ -34,6 +41,11 @@ for(size_t i = 0; i < numbers.size(); i++)
     else
         list_numbers.push_back(numbers[i]);
 }
+
+sort(numbers.begin(), numbers.end());
+sort(list_numbers.begin(), list_numbers.end());
+print(numbers);
+print(list_numbers, descending);
 ```
 
 ## Задача 4
